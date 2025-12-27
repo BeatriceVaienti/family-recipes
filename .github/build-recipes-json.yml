@@ -2,7 +2,7 @@ name: Build recipes.json
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     paths:
       - "manifests/**.json"
       - "scripts/build-recipes-index.mjs"
