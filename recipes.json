@@ -1,0 +1,26 @@
+[
+  {
+    "id": "recipe-001",
+    "label": {
+      "it": [
+        "Cafettone"
+      ],
+      "en": [
+        "Caffettone"
+      ]
+    },
+    "summary": {
+      "it": [
+        "Ricetta di famiglia, manoscritta."
+      ],
+      "en": [
+        "Family recipe, handwritten."
+      ]
+    },
+    "manifest": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001.json",
+    "data": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-001.json",
+    "thumbnail": "https://BeatriceVaienti.github.io/family-recipes/images/recipe-001-01.jpg",
+    "title_it": "Cafettone",
+    "title_en": "Caffettone"
+  }
+]
