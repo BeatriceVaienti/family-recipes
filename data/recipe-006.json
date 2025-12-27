@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-006.json",
+  "name": { "it": "Torta Ananas", "en": "Pineapple Cake" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Torta Ananas\n1 barattolo Ananas\n1 iogurt all'ananas\n3 misurini di farina\n2 misurini di zucchero\n1 mezzo di olio\n3 uova\n1 bustina lievito\ncaramellare lo stampo quando è freddo mettere le fette di ananas con la noce\nnei buchi\ntogliere dallo stampo appena cotto",
+    "en": "Pineapple cake\n1 jar of pineapple\n1 pineapple yogurt\n3 measuring cups of flour\n2 measuring cups of sugar\n1 half measure of oil\n3 eggs\n1 packet of baking powder\ncaramelize the pan, when cold place the pineapple slices with a walnut\nin the holes\nremove from the pan while still hot"
+  },
+  "recipeIngredient": {
+    "it": [
+      "1 barattolo di ananas",
+      "1 yogurt all'ananas",
+      "3 misurini di farina",
+      "2 misurini di zucchero",
+      "1/2 misurino di olio",
+      "3 uova",
+      "1 bustina di lievito"
+    ],
+    "en": [
+      "1 can of pineapple",
+      "1 pineapple yogurt",
+      "3 measuring cups flour",
+      "2 measuring cups sugar",
+      "1/2 measuring cup oil",
+      "3 eggs",
+      "1 packet baking powder"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Caramellare lo stampo. Quando è freddo, disporre le fette di ananas. Preparare l'impasto e versarlo nello stampo. Cuocere in forno e togliere dallo stampo appena cotto.",
+    "en": "Caramelize the cake pan. When cool, arrange the pineapple slices. Prepare the batter and pour it into the pan. Bake in the oven and remove from the pan while still hot."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-006.json"
+  }
+}

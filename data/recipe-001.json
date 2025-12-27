@@ -11,6 +11,10 @@
   "name": { "it": "Caffettone", "en": "Caffettone" },
   "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
   "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Cafettone\n2 estratti di caff\u00e8\n14 tazzine di caff\u00e8\n6 bustine di vanillina\n6 etti zucchero\n6 etti acqua\n6 etti alcol\n-\nfare bollire l'acqua con lo zucchero quando \u00e8 fredda mescolare tutto assieme",
+    "en": "Caffettone\n2 coffee extracts\n14 small cups of coffee\n6 packets of vanilla flavoring\n6 hectograms of sugar\n6 hectograms of water\n6 hectograms of alcohol\n-\nBoil the water with the sugar; once it has cooled, mix everything together."
+  },
   "recipeIngredient": {
     "it": [
     "2 estratti di caffè",

@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-002.json",
+  "name": { "it": "Torta Liviana", "en": "Liviana’s Cake" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Torta Liviana\nzucchero 350\nuova 6 un bicchiere scarso di olio\ndi semi un bicchiere di latte buccia\nlimone farina 250 2 buste di lievito\nsbattere i tuorli con lo zucchero\naggiungere il latte e l'olio la\nbuccia e la farina per ultimo il\nlievito e le chiare montate a neve\nl'impasto deve essere morbido stare\nnel forno circa 1 ora a 180 gradi",
+    "en": "Liviana’s Cake\nSugar 350\nEggs 6\nA slightly less than full glass of seed oil\nA glass of milk\nLemon zest\nFlour 250\n2 packets of baking powder\nBeat the egg yolks with the sugar.\nAdd the milk and the oil, the zest, and the flour.\nLastly add the baking powder and the egg whites whipped until stiff.\nThe batter must be soft.\nBake in the oven for about 1 hour at 180°C."
+  },
+  "recipeIngredient": {
+    "it": [
+      "350 g zucchero",
+      "6 uova",
+      "1 bicchiere scarso di olio di semi",
+      "1 bicchiere di latte",
+      "buccia di limone",
+      "250 g farina",
+      "2 bustine di lievito"
+    ],
+    "en": [
+      "350 g sugar",
+      "6 eggs",
+      "1 slightly less than full glass of neutral seed oil",
+      "1 glass of milk",
+      "lemon zest",
+      "250 g flour",
+      "2 packets of baking powder"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Sbattere i tuorli con lo zucchero. Aggiungere il latte e l'olio, la buccia di limone e la farina. Per ultimo unire il lievito e le chiare montate a neve. L'impasto deve essere morbido. Cuocere in forno circa 1 ora a 180°C.",
+    "en": "Beat the egg yolks with the sugar. Add the milk and the oil, the lemon zest, and the flour. Lastly fold in the baking powder and the egg whites whipped until stiff. The batter should be soft. Bake for about 1 hour at 180°C."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-002.json"
+  }
+}

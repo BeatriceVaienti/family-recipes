@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-004.json",
+  "name": { "it": "Castagnole alla ricotta", "en": "Ricotta Castagnole" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "castagnole alla ricotta\n500 farina\n300 ricotta\n7 cucchiai zucchero\nuna noce burro\n2 uova\nil sugo arance\n1 bustina pane e angeli",
+    "en": "Ricotta castagnole\nFlour 500\nRicotta 300\n7 tablespoons sugar\na knob of butter\n2 eggs\nthe juice of oranges\n1 packet Pane e Angeli baking powder"
+  },
+  "recipeIngredient": {
+    "it": [
+      "500 g farina",
+      "300 g ricotta",
+      "7 cucchiai di zucchero",
+      "una noce di burro",
+      "2 uova",
+      "succo d'arancia",
+      "1 bustina di lievito"
+    ],
+    "en": [
+      "500 g flour",
+      "300 g ricotta",
+      "7 tablespoons sugar",
+      "a knob of butter",
+      "2 eggs",
+      "orange juice",
+      "1 packet baking powder"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "",
+    "en": ""
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-004.json"
+  }
+}

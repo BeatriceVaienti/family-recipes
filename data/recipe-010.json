@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-010.json",
+  "name": { "it": "Bomboloni", "en": "Bomboloni" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Bomboloni\n1 chilo farina\n2 bustine di lievito granulato\n1 etto di grasso\n1 etto di zucchero\n1 pizzico di sale\n1 bustina di ovocrema\nlasciare le 2 bustine in acqua ...\npoi fare l'impasto e lasciarlo\nlievitare stenderlo e lasciarli gras...\nmezzo centimetro tagliare con un\nbicchiere e friggerli in olio bollente",
+    "en": "Bomboloni\n1 kilo flour\n2 packets of granulated yeast\n1 hectogram of fat\n1 hectogram of sugar\na pinch of salt\n1 packet of ovo-crema\nleave the 2 packets in water ...\nthen make the dough and let it\nrise roll it out and let them rest...\nhalf a centimeter cut with a\nglass and fry in boiling oil"
+  },
+  "recipeIngredient": {
+    "it": [
+      "1 kg di farina",
+      "2 bustine di lievito granulato",
+      "100 g di grasso",
+      "100 g di zucchero",
+      "un pizzico di sale",
+      "1 bustina di ovocrema",
+      "acqua",
+      "olio per friggere"
+    ],
+    "en": [
+      "1 kg flour",
+      "2 packets granulated yeast",
+      "100 g fat",
+      "100 g sugar",
+      "a pinch of salt",
+      "1 packet egg cream mix",
+      "water",
+      "oil for frying"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Sciogliere il lievito in acqua. Preparare l'impasto con tutti gli ingredienti e lasciarlo lievitare. Stendere l'impasto a circa mezzo centimetro di spessore e lasciarlo riposare. Tagliare i bomboloni con un bicchiere e friggerli in olio bollente.",
+    "en": "Dissolve the yeast in water. Prepare the dough with all the ingredients and let it rise. Roll it out to about half a centimeter thick and let it rest. Cut the bomboloni with a glass and fry them in hot oil."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-010.json"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-007.json",
+  "name": { "it": "Piadina fritta Laura", "en": "Laura’s Fried Piadina" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Piadina fritta Laura\n1 chilo farina\n2 uova, 2 cucchiai di aceto 4 cucchiai\ndi olio latte r acqua 40 grami di dose\nun pizzico di sale\nfare delle piadine tonde in un chilo\nse ne fanno 10 frigerla in molto\nolio e riempirle pomodoro e\nmozzarella prosciutto cotto o altri\nformaggi",
+    "en": "Laura’s fried piadina\n1 kilo flour\n2 eggs, 2 tablespoons vinegar 4 tablespoons\nof oil milk or water 40 grams of Dose\none pinch of salt\nmake round piadine, from one kilo\nyou make 10, fry them in plenty of\noil and fill them with tomato and\nmozzarella cooked ham or other\ncheeses"
+  },
+  "recipeIngredient": {
+    "it": [
+      "1 kg farina",
+      "2 uova",
+      "2 cucchiai di aceto",
+      "4 cucchiai di olio",
+      "latte o acqua",
+      "40 g di lievito",
+      "un pizzico di sale",
+      "olio per friggere",
+      "pomodoro",
+      "mozzarella",
+      "prosciutto cotto",
+      "altri formaggi"
+    ],
+    "en": [
+      "1 kg flour",
+      "2 eggs",
+      "2 tablespoons vinegar",
+      "4 tablespoons oil",
+      "milk or water",
+      "40 g yeast",
+      "a pinch of salt",
+      "oil for frying",
+      "tomato",
+      "mozzarella",
+      "cooked ham",
+      "other cheeses"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Preparare l'impasto con tutti gli ingredienti. Formare piadine tonde (con 1 kg di farina se ne ottengono circa 10). Friggerle in abbondante olio. Riempirle con pomodoro, mozzarella, prosciutto cotto o altri formaggi.",
+    "en": "Prepare the dough with all the ingredients. Shape round piadine (about 10 from 1 kg of flour). Fry them in plenty of oil. Fill with tomato, mozzarella, cooked ham, or other cheeses."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-007.json"
+  }
+}

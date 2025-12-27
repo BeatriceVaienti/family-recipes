@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-005.json",
+  "name": { "it": "Gelato dolce molto buono", "en": "Very Good Sweet Ice Cream" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Gelato dolce molto buono\nmezzo litro di panna\nliquida 150 di zucchero\n6 tuorli 4 bustine di vaniglia\n1 bustina di nescafè\nmontare la panna con lo zucchero e\naggiungere i rossi e il caffè",
+    "en": "Very good sweet ice cream\nhalf a liter of cream\nliquid 150 of sugar\n6 yolks 4 packets of vanilla\n1 packet of Nescafé\nwhip the cream with the sugar and\nadd the yolks and the coffee"
+  },
+  "recipeIngredient": {
+    "it": [
+      "500 ml panna liquida",
+      "150 g zucchero",
+      "6 tuorli",
+      "4 bustine di vaniglia",
+      "1 bustina di Nescafé"
+    ],
+    "en": [
+      "500 ml liquid cream",
+      "150 g sugar",
+      "6 egg yolks",
+      "4 packets of vanilla",
+      "1 packet of Nescafé instant coffee"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Montare la panna con lo zucchero. Aggiungere i tuorli e il caffè.",
+    "en": "Whip the cream with the sugar. Add the egg yolks and the coffee."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-005.json"
+  }
+}

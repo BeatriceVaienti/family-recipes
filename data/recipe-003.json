@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-003.json",
+  "name": { "it": "Farfalle con zucchini e fiori", "en": "Farfalle with Zucchini and Zucchini Blossoms" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "farfalle con\nzucchini e fiori\nsofrigere la cipolla con\nun spicco aglio poi\nmettere zucchini e fiori\ncuocerli in un po di\nolio quando sono\ncotti mettere un etto di ricotta\ne condire le farfalle",
+    "en": "Farfalle with\nzucchini and blossoms\nsauté the onion with\na clove of garlic then\nadd zucchini and blossoms\ncook them in a little\noil when they are\ncooked add one hectogram of ricotta\nand dress the farfalle"
+  },
+  "recipeIngredient": {
+    "it": [
+      "farfalle",
+      "zucchine",
+      "fiori di zucchine",
+      "cipolla",
+      "1 spicchio d'aglio",
+      "olio",
+      "100 g di ricotta"
+    ],
+    "en": [
+      "farfalle pasta",
+      "zucchini",
+      "zucchini blossoms",
+      "onion",
+      "1 clove of garlic",
+      "olive oil",
+      "100 g ricotta"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Soffriggere la cipolla con uno spicchio d'aglio. Aggiungere le zucchine e i fiori e cuocerli in un po' d'olio. Quando sono cotti, unire un etto di ricotta e usare il condimento per le farfalle.",
+    "en": "Sauté the onion with a clove of garlic. Add the zucchini and blossoms and cook them in a little oil. When cooked, add 100 g of ricotta and use the sauce to dress the farfalle."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-003.json"
+  }
+}

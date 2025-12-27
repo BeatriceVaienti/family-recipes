@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-008.json",
+  "name": { "it": "Liquore digestivo erba luisa", "en": "Lemon Verbena Digestive Liqueur" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Liquore digestivo erba\nluisa\n1 litro alcol 120 foglie luisa\nbuccia di un limone lasciare in infusione per 10 giorni poi fare bollire un litro di acqua e un chilo di zucchero bollire 5 minuti poi mescolare tutto assieme",
+    "en": "Digestive liqueur lemon\nverbena\n1 liter alcohol 120 verbena leaves\npeel of one lemon leave to infuse for 10 days then boil one liter of water and one kilo of sugar boil 5 minutes then mix everything together"
+  },
+  "recipeIngredient": {
+    "it": [
+      "1 litro di alcol",
+      "120 foglie di erba luisa",
+      "buccia di 1 limone",
+      "1 litro di acqua",
+      "1 kg di zucchero"
+    ],
+    "en": [
+      "1 liter alcohol",
+      "120 lemon verbena leaves",
+      "peel of 1 lemon",
+      "1 liter water",
+      "1 kg sugar"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "Lasciare in infusione nell'alcol le foglie di erba luisa e la buccia di limone per 10 giorni. Preparare uno sciroppo facendo bollire l'acqua con lo zucchero per 5 minuti. Lasciare raffreddare e poi mescolare tutto insieme.",
+    "en": "Leave the lemon verbena leaves and lemon peel to infuse in the alcohol for 10 days. Prepare a syrup by boiling the water with the sugar for 5 minutes. Let it cool, then mix everything together."
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-008.json"
+  }
+}

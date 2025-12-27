@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructions": { "@container": "@language" },
+    "recipeIngredient": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-009.json",
+  "name": { "it": "Piadina Rosina", "en": "Rosina’s Piadina" },
+  "author": { "@type": "Person", "name": "Attilia (Tiglia) Zecchi" },
+  "description": { "it": "Ricetta di famiglia, manoscritta.", "en": "Family recipe, handwritten." },
+  "transcription": {
+    "it": "Piadina Rosina\n1 chilo di farina\n2 etti grasso\n40 grammi lievito\n1 uovo 1 cucchiaino 1n miele e latte",
+    "en": "Rosina’s piadina\n1 kilo of flour\n2 hectograms of fat\n40 grams yeast\n1 egg 1 teaspoon 1n honey and milk"
+  },
+  "recipeIngredient": {
+    "it": [
+      "1 kg di farina",
+      "200 g di grasso",
+      "40 g di lievito",
+      "1 uovo",
+      "1 cucchiaino di miele",
+      "1 cucchiaino di latte"
+    ],
+    "en": [
+      "1 kg flour",
+      "200 g fat",
+      "40 g yeast",
+      "1 egg",
+      "1 teaspoon honey",
+      "1 teaspoon milk"
+    ]
+  },
+  "recipeInstructions": {
+    "it": "",
+    "en": ""
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-009.json"
+  }
+}
