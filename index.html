@@ -1,19 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Family Recipe Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Archivio Ricette / Recipes Archive</title>
     <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
   </head>
-  <body>
-    <div id="viewer" style="height: 100vh;"></div>
+  <body style="margin: 0">
+    <div id="viewer" style="height: 100vh"></div>
 
     <script>
       Mirador.viewer({
         id: "viewer",
         windows: [
           {
-            manifestId: "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001.json"
+            manifestId:
+              "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001.json"
           }
         ]
       });
