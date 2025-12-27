@@ -67,39 +67,13 @@
           ]
         }
       ],
-
       "annotations": [
-        {
-          "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/annopage/text/1",
-          "type": "AnnotationPage",
-          "items": [
             {
-              "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/annotation/transcription/it/1",
-              "type": "Annotation",
-              "motivation": "supplementing",
-              "target": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/canvas/1",
-              "body": {
-                "type": "TextualBody",
-                "value": "Cafettone\n2 estratti di caff\u00e8\n14 tazzine di caff\u00e8\n6 bustine di vanillina\n6 etti zucchero\n6 etti acqua\n6 etti alcol\n-\nfare bollire l'acqua con lo zucchero quando \u00e8 fredda mescolare tutto assieme",
-                "format": "text/plain",
-                "language": "it"
-              }
-            },
-            {
-              "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/annotation/translation/en/1",
-              "type": "Annotation",
-              "motivation": "supplementing",
-              "target": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/canvas/1",
-              "body": {
-                "type": "TextualBody",
-                "value": "Caffettone\n2 coffee extracts\n14 small cups of coffee\n6 packets of vanilla flavoring\n6 hectograms of sugar\n6 hectograms of water\n6 hectograms of alcohol\n-\nBoil the water with the sugar; once it has cooled, mix everything together.",
-                "format": "text/plain",
-                "language": "en"
-              }
+                "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/annopage-text-1.json",
+                "type": "AnnotationPage"
             }
-          ]
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
+
