@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "name": { "@container": "@language" },
+    "description": { "@container": "@language" },
+    "recipeInstructionsText": { "@container": "@language" },
+    "keywords": { "@container": "@language" }
+  },
+  "@type": "Recipe",
+  "@id": "https://BeatriceVaienti.github.io/family-recipes/data/recipe-001.json",
+
+  "name": {
+    "it": "Caffettone",
+    "en": "Caffettone"
+  },
+
+  "author": {
+    "@type": "Person",
+    "name": "Attilia (Tiglia) Zecchi"
+  },
+
+  "description": {
+    "it": "Ricetta di famiglia, manoscritta.",
+    "en": "Family recipe, handwritten."
+  },
+
+  "recipeIngredient": [
+    "2 estratti di caffè",
+    "14 tazzine di caffè",
+    "6 bustine di vanillina",
+    "600 g di zucchero",
+    "600 g di acqua",
+    "600 g di alcool"
+  ],
+  "recipeIngredientTranslation": {
+  "en": [
+    "2 coffee extracts",
+    "14 small cups of coffee",
+    "6 packets of vanilla flavoring",
+    "600 g sugar",
+    "600 g water",
+    "600 g alcohol"
+    ]
+    },
+
+  "recipeInstructionsText": {
+    "it": "Fare bollire l'acqua con lo zucchero, quando è fredda mescolare tutto assieme.",
+    "en": "Boil the water with the sugar, when cold mix everything together."
+  },
+
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Manoscritto originale fotografato",
+    "url": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001.json"
+  }
+}
+
