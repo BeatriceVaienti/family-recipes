@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe</title>
+
+    <!-- Mirador -->
+    <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      .layout {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        height: 100vh;
+      }
+      #viewer { height: 100vh; }
+      aside {
+        border-left: 1px solid #ddd;
+        padding: 16px;
+        overflow-y: auto;
+      }
+      h1 { font-size: 18px; margin: 0 0 8px; }
+      h2 { font-size: 14px; margin: 16px 0 6px; }
+      ul { margin: 6px 0 0 18px; }
+      pre { white-space: pre-wrap; }
+      .muted { opacity: 0.7; font-size: 13px; }
+      .lang button { margin-right: 6px; }
+      .back { display: inline-block; margin-bottom: 10px; }
+
+      @media (max-width: 900px) {
+        .layout { grid-template-columns: 1fr; }
+        #viewer { height: 60vh; }
+        aside {
+          height: 40vh;
+          border-left: none;
+          border-top: 1px solid #ddd;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layout">
+      <div id="viewer"></div>
+
+      <aside>
+        <a class="back" href="./index.html">← back to gallery</a>
+
+        <div class="lang">
+          <button id="itBtn">IT</button>
+          <button id="enBtn">EN</button>
+        </div>
+
+        <h1 id="title">Loading…</h1>
+        <p id="desc" class="muted"></p>
+
+        <h2>Ingredients</h2>
+        <ul id="ingredients"></ul>
+
+        <h2>Procedure</h2>
+        <pre id="instructions"></pre>
+
+        <hr />
+        <p class="muted">
+          <a id="manifestLink" target="_blank">Open IIIF manifest</a><br />
+          <a id="dataLink" target="_blank">Open recipe JSON-LD</a>
+        </p>
+      </aside>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const recipeId = params.get("id");
+      let currentLang = "it";
+      let recipeIndex, recipeData, recipeMeta;
+
+      function pickLang(map) {
+        if (!map) return "";
+        if (typeof map === "string") return map;
+        return map[currentLang] || map.en || map.it || "";
+      }
+
+      function pickLangList(map) {
+        if (!map) return [];
+        if (Array.isArray(map)) return map;
+        const v = map[currentLang] || map.en || map.it || [];
+        return Array.isArray(v) ? v : [v];
+      }
+
+      function render() {
+        document.getElementById("title").textContent =
+          pickLang(recipeData.name) || recipeMeta.id;
+
+        document.getElementById("desc").textContent =
+          pickLang(recipeData.description);
+
+        const ing = document.getElementById("ingredients");
+        ing.innerHTML = "";
+        pickLangList(recipeData.recipeIngredient).forEach(i => {
+          const li = document.createElement("li");
+          li.textContent = i;
+          ing.appendChild(li);
+        });
+
+        document.getElementById("instructions").textContent =
+          pickLang(recipeData.recipeInstructions);
+
+        document.getElementById("manifestLink").href = recipeMeta.manifest;
+        document.getElementById("dataLink").href = recipeMeta.data;
+      }
+
+      async function main() {
+        if (!recipeId) throw new Error("Missing ?id=recipe-XXX");
+
+        recipeIndex = await (await fetch("./recipes.json")).json();
+        recipeMeta = recipeIndex.find(r => r.id === recipeId);
+
+        if (!recipeMeta) throw new Error("Recipe not found: " + recipeId);
+
+        // Start Mirador
+        Mirador.viewer({
+          id: "viewer",
+          windows: [{ manifestId: recipeMeta.manifest }]
+        });
+
+        // Load recipe JSON-LD
+        recipeData = await (await fetch(recipeMeta.data)).json();
+
+        render();
+        document.title = pickLang(recipeData.name) || recipeMeta.id;
+      }
+
+      document.getElementById("itBtn").onclick = () => {
+        currentLang = "it";
+        render();
+      };
+      document.getElementById("enBtn").onclick = () => {
+        currentLang = "en";
+        render();
+      };
+
+      main().catch(err => {
+        document.getElementById("title").textContent = err.message;
+      });
+    </script>
+  </body>
+</html>
