@@ -1,0 +1,40 @@
+name: Build recipes.json
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "manifests/**.json"
+      - "scripts/build-recipes-index.mjs"
+      - ".github/workflows/build-recipes-json.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build recipes.json
+        run: node scripts/build-recipes-index.mjs
+
+      - name: Commit recipes.json if changed
+        run: |
+          if git diff --quiet -- recipes.json; then
+            echo "No changes to recipes.json"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add recipes.json
+          git commit -m "Update recipes.json"
+          git push

@@ -41,113 +41,74 @@
     <header>
       <h1 style="margin:0; font-size:18px;">Archivio Ricette / Recipes Archive</h1>
       <p style="margin:6px 0 0; opacity:.75;">
-        Gallery is generated dynamically from the manifests folder.
+        Gallery is generated from <code>recipes.json</code>.
       </p>
     </header>
 
-    <div id="status" class="status">Loading manifests…</div>
+    <div id="status" class="status">Loading recipes…</div>
     <main class="grid" id="grid"></main>
 
     <script>
-      // ---- CONFIG ----
-      const OWNER = "BeatriceVaienti";
-      const REPO  = "family-recipes";
-      const BRANCH = "main"; // change if you use "master"
-      const MANIFESTS_DIR = "manifests";
-
-      // Your GitHub Pages base:
-      const PAGES_BASE = `https://${OWNER}.github.io/${REPO}`;
-
       // Where a clicked card should go:
-      // If you use the recipe.html pattern from earlier, keep this.
-      // Otherwise you can make it link directly to the manifest URL.
-      const RECIPE_PAGE = "./recipe.html"; // expects ?manifest=<url> OR ?id=...
-
-      // Optional: pick which language to show first
+      // This assumes your recipe viewer can accept ?id=recipe-001
+      // (If instead you prefer ?manifest=..., tell me and I’ll switch it.)
+      const RECIPE_PAGE = "./recipe.html";
       const DEFAULT_LANG = "it";
 
-      function pickLang(map, lang = DEFAULT_LANG) {
-        if (!map) return "";
-        if (typeof map === "string") return map;
+      function pickLang(iiifLangMap, lang = DEFAULT_LANG) {
+        if (!iiifLangMap) return "";
+        if (typeof iiifLangMap === "string") return iiifLangMap;
+
         // IIIF language maps are usually { "it": ["..."], "en": ["..."] }
-        const v = map[lang] || map.en || map.it;
+        const v = iiifLangMap[lang] || iiifLangMap.en || iiifLangMap.it;
         if (Array.isArray(v)) return v[0] || "";
         return v || "";
       }
 
-      function getThumbnail(manifest) {
-        // IIIF Presentation 3 thumbnail can be:
-        // thumbnail: [{ id, type, format, ... }]
-        const t = manifest.thumbnail;
-        if (Array.isArray(t) && t[0]) {
-          if (typeof t[0] === "string") return t[0];
-          if (t[0].id) return t[0].id;
-        }
-        // fallback: try first canvas painting image
-        try {
-          const body = manifest.items?.[0]?.items?.[0]?.items?.[0]?.body;
-          if (body?.id) return body.id;
-        } catch (e) {}
-        return "";
+      function summaryToText(summary) {
+        if (!summary) return "";
+        if (typeof summary === "string") return summary;
+        // IIIF summary is a language map: { it: ["..."], en: ["..."] }
+        const v = summary[DEFAULT_LANG] || summary.en || summary.it;
+        if (Array.isArray(v)) return v[0] || "";
+        return v || "";
       }
 
-      async function listManifestFiles() {
-        // GitHub Contents API for /manifests
-        // Note: Unauthenticated is rate-limited; fine for small family use.
-        const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${MANIFESTS_DIR}?ref=${encodeURIComponent(BRANCH)}`;
-        const res = await fetch(url, { headers: { "Accept": "application/vnd.github+json" } });
-        if (!res.ok) {
-          const txt = await res.text();
-          throw new Error(`Could not list /${MANIFESTS_DIR} (${res.status}). ${txt}`);
-        }
-        const items = await res.json();
-        return items
-          .filter(x => x.type === "file" && x.name.endsWith(".json"))
-          .map(x => x.name);
-      }
-
-      async function fetchManifestByName(filename) {
-        // Prefer fetching from Pages, since that’s the public canonical URL your viewer will use
-        const manifestUrl = `${PAGES_BASE}/${MANIFESTS_DIR}/${filename}`;
-        const res = await fetch(manifestUrl, { cache: "no-store" });
-        if (!res.ok) throw new Error(`Failed to fetch manifest: ${manifestUrl}`);
-        const manifest = await res.json();
-        return { manifestUrl, manifest };
-      }
-
-      function addCard({ manifestUrl, manifest }) {
+      function addCard(recipe) {
         const grid = document.getElementById("grid");
 
-        const label = pickLang(manifest.label);
-        const summary = pickLang(manifest.summary);
-        const thumb = getThumbnail(manifest);
+        const title =
+          recipe.title_it ||
+          pickLang(recipe.label, "it") ||
+          recipe.title_en ||
+          pickLang(recipe.label, "en") ||
+          recipe.id;
+
+        const subtitle =
+          summaryToText(recipe.summary) ||
+          pickLang(recipe.summary, DEFAULT_LANG) ||
+          "";
 
         const a = document.createElement("a");
         a.className = "card";
-
-        // Option A: go to your recipe viewer page (recommended)
-        // Pass the manifest URL so recipe.html can open Mirador easily.
-        a.href = `${RECIPE_PAGE}?manifest=${encodeURIComponent(manifestUrl)}`;
-
-        // Option B: link directly to the manifest
-        // a.href = manifestUrl;
+        a.href = `${RECIPE_PAGE}?id=${encodeURIComponent(recipe.id)}`;
 
         const img = document.createElement("img");
         img.className = "thumb";
         img.loading = "lazy";
-        img.src = thumb;
-        img.alt = label || filename;
+        img.src = recipe.thumbnail || "";
+        img.alt = title;
 
         const meta = document.createElement("div");
         meta.className = "meta";
 
         const t = document.createElement("p");
         t.className = "title";
-        t.textContent = label || manifestUrl.split("/").pop();
+        t.textContent = title;
 
         const s = document.createElement("p");
         s.className = "subtitle";
-        s.textContent = summary || "";
+        s.textContent = subtitle;
 
         meta.appendChild(t);
         meta.appendChild(s);
@@ -159,42 +120,30 @@
 
       async function main() {
         const status = document.getElementById("status");
-        status.textContent = "Listing manifests…";
+        status.textContent = "Loading recipes…";
 
-        const files = await listManifestFiles();
+        const res = await fetch("./recipes.json", { cache: "no-store" });
+        if (!res.ok) {
+          throw new Error("Could not load recipes.json (did you commit it to the repo root?).");
+        }
 
-        if (!files.length) {
-          status.textContent = "No manifests found.";
+        const recipes = await res.json();
+        if (!Array.isArray(recipes) || recipes.length === 0) {
+          status.textContent = "No recipes found in recipes.json.";
           return;
         }
 
-        status.textContent = `Found ${files.length} manifests. Loading details…`;
+        // Optional: sort by id (recipe-001, recipe-002, ...)
+        recipes.sort((a, b) => (a.id || "").localeCompare(b.id || "", undefined, { numeric: true }));
 
-        // Fetch manifests in parallel but not too aggressively
-        const concurrency = 6;
-        let idx = 0;
-
-        async function worker() {
-          while (idx < files.length) {
-            const i = idx++;
-            const filename = files[i];
-            try {
-              const { manifestUrl, manifest } = await fetchManifestByName(filename);
-              addCard({ manifestUrl, manifest, filename });
-            } catch (e) {
-              console.warn(e);
-            }
-          }
-        }
-
-        await Promise.all(Array.from({ length: concurrency }, worker));
-
+        recipes.forEach(addCard);
         status.textContent = "";
       }
 
       main().catch(err => {
-        document.getElementById("status").className = "error";
-        document.getElementById("status").textContent = err.message;
+        const status = document.getElementById("status");
+        status.className = "error";
+        status.textContent = err.message;
       });
     </script>
   </body>
