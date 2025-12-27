@@ -2,11 +2,22 @@
   "@context": "http://iiif.io/api/presentation/3/context.json",
   "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001.json",
   "type": "Manifest",
+
   "label": { "it": ["Cafettone"], "en": ["Caffettone"] },
+
   "summary": {
     "it": ["Ricetta di famiglia, manoscritta."],
     "en": ["Family recipe, handwritten."]
   },
+
+  "thumbnail": [
+    {
+      "id": "https://BeatriceVaienti.github.io/family-recipes/images/recipe-001-01.jpg",
+      "type": "Image",
+      "format": "image/jpeg"
+    }
+  ],
+
   "metadata": [
     {
       "label": { "it": ["Autrice della ricetta"], "en": ["Recipe author"] },
@@ -20,6 +31,7 @@
       }
     }
   ],
+
   "items": [
     {
       "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/canvas/1",
@@ -27,6 +39,15 @@
       "label": { "it": ["Pagina 1"], "en": ["Page 1"] },
       "height": 2048,
       "width": 1536,
+
+      "thumbnail": [
+        {
+          "id": "https://BeatriceVaienti.github.io/family-recipes/images/recipe-001-01.jpg",
+          "type": "Image",
+          "format": "image/jpeg"
+        }
+      ],
+
       "items": [
         {
           "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/page/1",
@@ -46,6 +67,7 @@
           ]
         }
       ],
+
       "annotations": [
         {
           "id": "https://BeatriceVaienti.github.io/family-recipes/manifests/recipe-001/annopage/text/1",
